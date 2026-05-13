@@ -51,6 +51,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -203,6 +204,13 @@ fun Home() {
                         SearchBar(
                             modifier = Modifier
                                 .semantics { traversalIndex = 0f },
+                            colors = SearchBarDefaults.colors(
+                                containerColor = androidx.compose.ui.graphics.Color(0xFF2C2A2F),
+                                inputFieldColors = TextFieldDefaults.colors(
+                                    focusedTextColor = androidx.compose.ui.graphics.Color.White,
+                                    unfocusedTextColor = androidx.compose.ui.graphics.Color.White,
+                                    cursorColor = androidx.compose.ui.graphics.Color.White
+                                )),
                             expanded = expanded,
                             onExpandedChange = { expanded = it },
                             inputField = {
